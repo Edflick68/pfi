@@ -1,4 +1,4 @@
-import { FlatList, Text, Pressable, StyleSheet } from "react-native";
+import { View, FlatList, Text, Pressable, StyleSheet } from "react-native";
 import { useSQLiteContext, SQLiteProvider } from "expo-sqlite";
 async function initDB(db) {
   await db.execAsync(`DROP TABLE IF EXISTS produit`);
@@ -19,3 +19,71 @@ async function initDB(db) {
     INSERT INTO client(nom, description, prix, image) values('Carapace épineuse' 'Attquez le conducteur en 1ère place avec ce fameux objet de destruction!', 60);
     INSERT INTO client(nom, description, prix, image) values('Bombe', 'Faites exploser tout sur la route avec ce retoutable objet!', 55);`);
 }
+
+export default function ListeProduit(){
+     <SQLiteProvider databaseName="produit.db" onInit={initDB} options={{useNewConnection: false}}>
+     <Content/>
+     </SQLiteProvider>
+}
+function Content() {
+  const db = useSQLiteContext(); 
+  const [notes, setNotes] = useState([]);
+  
+  async function chargerNotes() {
+    const result = await db.getAllAsync("SELECT * FROM produit ORDER BY num DESC");
+    setNotes(result);
+  };
+
+  useEffect(() => {
+    chargerNotes();
+  }, []);
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.titre}>Le pit stop</Text>
+      {afficherFormulaire && (
+        <Formulaire note={note} setNote={setNote} ajouterNote={ajouterNote}/>
+      )}
+      <FlatList
+        data={notes}
+        keyExtractor={(item) => item.num.toString()}
+        renderItem={({item}) => ()}
+        ListEmptyComponent={
+          <Text style={{marginTop: 20, fontSize: 16}}>
+            Vous n'avez pas aucune note pour le moment...
+          </Text>
+        }/>
+    </View>
+  );
+}
+const styles = StyleSheet.create({
+  container: {
+    paddingTop: 30,
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  titre:{
+    fontSize: 20,
+    fontWeight:'bold'
+
+  },
+  notePressable: {
+    backgroundColor: "lightsalmon",
+    paddingBottom: 5,
+    marginBottom: 5,
+    borderWidth: 5
+  },
+  produitContent: {
+    backgroundColor: "lightgrey",
+    paddingBottom: 5,
+    marginBottom: 5,
+    fontSize: 16
+  },
+  input:{
+    borderWidth: 1,
+    borderColor: "#ccc",
+    padding: 10,
+    marginVertical: 5,
+    borderRadius: 5
+  }
+});
