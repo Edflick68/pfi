@@ -13,11 +13,11 @@ async function initDB(db) {
     INSERT INTO client(nom, description, prix, image) values('Fleur Boomerang', 'Lancez un boomerang trois fois!', 15);
     INSERT INTO client(nom, description, prix, image) values('Banane', 'Ralentissez vos rivaux avec ceci!', 2);
     INSERT INTO client(nom, description, prix, image) values('Éclair', 'Rapetissez et ralentissez tous les autres conducteurs!', 35);
-    INSERT INTO client(nom, description, prix, image) values('Champignon doré', 'Vous donne autant de boosts que vous désirez pendant un ceratin temps!', 70);
-    INSERT INTO client(nom, description, prix, image) values('Carapace verte', 'Snipez votre adversaire avec cette util objet!', 12);
+    INSERT INTO client(nom, description, prix, image) values('Champignon doré', 'Vous donne autant de boosts que vous désirez pendant un certain temps!', 70);
+    INSERT INTO client(nom, description, prix, image) values('Carapace verte', 'Visez votre adversaire avec cette util objet!', 12);
     INSERT INTO client(nom, description, prix, image) values('Carapace rouge', 'Attaquez l'adversaire le plus proche avec ceci!', 15);
-    INSERT INTO client(nom, description, prix, image) values('Carapace épineuse' 'Attquez le conducteur en 1ère place avec ce fameux objet de destruction!', 60);
-    INSERT INTO client(nom, description, prix, image) values('Bombe', 'Faites exploser tout sur la route avec ce retoutable objet!', 55);`);
+    INSERT INTO client(nom, description, prix, image) values('Carapace épineuse' 'Attaquez le conducteur en 1ère place avec ce fameux objet de destruction!', 60);
+    INSERT INTO client(nom, description, prix, image) values('Bombe', 'Faites exploser tout sur la route avec ce redoutable objet!', 55);`);
 }
 
 export default function ListeProduit(){
