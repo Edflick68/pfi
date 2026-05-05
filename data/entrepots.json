@@ -1,0 +1,51 @@
+[
+    {
+       "nom":"MaryLand",
+       "image":"https://lh3.googleusercontent.com/gps-cs-s/APNQkAFP3j1kfWOhM92869AKRb3t2VihTIrC58TLSAJUIF7fjYLSKW_YaGwFsGGXHJsj-ZxqNWfu9GNF7TOt90-B8G3p-78ulduNhYpXEHk47GnQaQWowSYkZulzkx_4ykKpnlVDxb6KSA=w408-h272-k-no",
+       "coordonnes":[
+        {"longitude0":45.56770009918571, "latitude":-73.77010482326918}
+       ]
+    },
+    {
+       "nom":"Dry Dry Items",
+       "image":"https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=AQqibnxdzUzlo1dgETmQKw&cb_client=search.gws-prod.gps&w=408&h=240&yaw=359.16827&pitch=0&thumbfov=100",
+       "coordonnes":[
+        {"longitude0":46.07399788599158, "latitude":-73.5026360018021}
+       ]
+    },
+    {
+       "nom":"Sherbet Palace",
+       "image":"https://lh3.googleusercontent.com/gps-cs-s/APNQkAG2H5j15fTp4WJmYOhw5xoSukEckZ6WfTMhEKes8BhNJbWJ8khAambY0QhRytU9ihkWWAkPbefmnod9Qq6DDmH4vLzbaG8QziiM5wyYab6kWcjdxcwpd-CN2v0NRRsERr-C5Z8=w408-h270-k-no",
+       "coordonnes":[
+        {"longitude0":45.577950623569826, "latitude":-73.70120093066656}
+       ]
+    },
+    {
+       "nom":"Super Stadium",
+       "image":"https://lh3.googleusercontent.com/gps-cs-s/APNQkAE6hF46vls2vTOoouVHcvPbq2BQYzQp3BMnqJ3XfJ3auUcdBqW6VwiASxXMtf5470gtxc11QD4GpqqW6UgZU4JKOwSXh8IUXCKtLmBanB0AUTI1HWUrpO-Q-1554qvp7W7-stz7=w408-h240-k-no-pi-10-ya52.839962-ro-0-fo100",
+       "coordonnes":[
+        {"longitude0":45.374821226315, "latitude":-73.52619438133407}
+       ]
+    },
+    {
+       "nom":"Costco Inventory",
+       "image":"https://lh3.googleusercontent.com/gps-cs-s/APNQkAGPP515mq326Htmt3lajPdlQImVPqjFKebrz_MxkZ6hqloCva4prbxGYDsFrdlRcvJ3XIZ8wrhX8W_7E8EqC1owrs3kxTOJxmU1EDEweIxEc2goMVkYuX7SDP6MOFx3sHmeoNn9s3nibuc=w408-h306-k-no",
+       "coordonnes":[
+        {"longitude0":45.76560753698237, "latitude":-74.01837944784769}
+       ]
+    },
+    {
+       "nom":"Daisy Cozy",
+       "image":"https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=ycoiHkYOoflEKECzQlVvYw&cb_client=search.gws-prod.gps&w=408&h=240&yaw=37.6211&pitch=0&thumbfov=100",
+       "coordonnes":[
+        {"longitude0":45.67128657459362, "latitude":-73.90218539641127}
+       ]
+    },
+    {
+       "nom":"Donut place",
+       "image":"https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=BKkomYD0hfD7ueMM3bZlog&cb_client=search.gws-prod.gps&w=408&h=240&yaw=228.09302&pitch=0&thumbfov=100",
+       "coordonnes":[
+        {"longitude0":45.66857119592528, "latitude":-73.85418437299005}
+       ]
+    }
+]
