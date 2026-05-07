@@ -1,0 +1,9 @@
+{
+    "appName" : "Le Pit Stop",
+    "login" : "Connexion",
+    "products" : "Nos items",
+    "cart" : "Votre panier",
+    "account" : "Compte",
+    "buy" : "Acheter",
+    "total" : "Total"
+}

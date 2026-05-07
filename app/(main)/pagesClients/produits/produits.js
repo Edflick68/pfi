@@ -1,5 +1,6 @@
 import { View, FlatList, Text, Pressable, StyleSheet } from "react-native";
 import { useSQLiteContext, SQLiteProvider } from "expo-sqlite";
+import { formatPrice } from "../../../../utils/formatPrice";
 async function initDB(db) {
   await db.execAsync(`DROP TABLE IF EXISTS produit`);
   await db.execAsync(`PRAGMA journal_mode = WAL;
@@ -25,6 +26,7 @@ export default function ListeProduit(){
      <Content/>
      </SQLiteProvider>
 }
+
 function Content() {
   const db = useSQLiteContext(); 
   const [notes, setNotes] = useState([]);
