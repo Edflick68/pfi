@@ -5,5 +5,11 @@
     "cart" : "Your cart",
     "account" : "Account",
     "buy" : "Buy",
-    "total" : "Total"
+    "total" : "Total",
+    "admin_products": "Item Management",
+    "add_product": "Add an item",
+    "delete": "Delete",
+    "price" : "Price",
+    "image_url": " Image URL",
+    "save": "Save"
 }

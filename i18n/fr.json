@@ -5,5 +5,11 @@
     "cart" : "Votre panier",
     "account" : "Compte",
     "buy" : "Acheter",
-    "total" : "Total"
+    "total" : "Total",
+    "admin_products": "Gestion des items",
+    "add_product": "Ajouter un produit",
+    "delete": "Supprimer",
+    "price" : "Prix",
+    "image_url": "URL de l'image",
+    "save": "Enregister"
 }

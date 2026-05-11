@@ -14,17 +14,17 @@ export default function ListeProduit() {
 
 function Content() {
   const db = useSQLiteContext();
-  const [notes, setNotes] = useState([]);
+  const [produits, setProduits] = useState([]);
 
-  async function chargerNotes() {
+  async function chargerProduit() {
     const result = await db.getAllAsync(
       "SELECT * FROM produit ORDER BY num DESC",
     );
-    setNotes(result);
+    setProduits(result);
   }
 
   useEffect(() => {
-    chargerNotes();
+    chargerProduit();
   }, []);
 
   return (
