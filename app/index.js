@@ -58,7 +58,7 @@ export default function LoginScreen() {
 
         <TextInput
           style={styles.input}
-          placeholder="Nom d'utilisateur (ex: Lina ou Edouard)"
+          placeholder="Nom d'utilisateur"
           value={nom}
           onChangeText={setNom}
           autoCapitalize="none"
