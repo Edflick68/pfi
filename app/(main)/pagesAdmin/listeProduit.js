@@ -14,6 +14,7 @@ function Content() {
   const db = useSQLiteContext(); 
   const {t} = useTranslation();
   const [items, setItems] = useState([]);
+  const router = useRouter();
   
   async function chargerItems() {
     const result = await db.getAllAsync("SELECT * FROM produit ORDER BY num DESC");
