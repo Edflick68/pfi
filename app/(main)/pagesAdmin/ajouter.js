@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import { View, Text, TextInput, StyleSheet, Pressable } from 'react-native';
-import { useTranslation } from 'react-i18next';
+import i18n from '../../../i18n';
 import { useRouter } from 'expo-router';
 import { useSQLiteContext, SQLiteProvider } from "expo-sqlite";
 
@@ -11,7 +11,6 @@ export default function AjouterProduit() {
 }
 
 function Add() {
-    const {t} = useTranslation();
     const router = useRouter();
 
     const [nom, setNom] = useState("");
@@ -30,35 +29,35 @@ function Add() {
 
     return(
         <View style={styles.container}>
-            <Text style={styles.title}>{t("add_product")}</Text>
+            <Text style={styles.title}>{i18n("add_product")}</Text>
 
             <TextInput
-            placeholder={t("name")}
+            placeholder={i18n("name")}
             style={styles.input}
             value={nom}
             onChangeText={setNom}/>
 
             <TextInput
-            placeholder={t("description")}
+            placeholder={i18n("description")}
             style={styles.input}
             value={description}
             onChangeText={setDescription}/>
 
             <TextInput
-            placeholder={t("price")}
+            placeholder={i18n("price")}
             style={styles.input}
             keyboardType = "numeric"
             value={prix}
             onChangeText={setPrix}/>
 
             <TextInput
-            placeholder={t("image_url")}
+            placeholder={i18n("image_url")}
             style={styles.input}
             value={img}
             onChangeText={setImg}/>
 
             <Pressable style={styles.btn} onPress={ajouter}>
-                <Text style={styles.btnText}>{t("save")}</Text>
+                <Text style={styles.btnText}>{i18n("save")}</Text>
             </Pressable>
         </View>
     );

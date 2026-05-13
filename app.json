@@ -55,7 +55,9 @@
       [
         "expo-localization"
       ],
-      "expo-maps"
-    ]
+      "expo-maps",
+      "react-native-localize"
+    ],
+    "platforms":["android", "ios"]
   }
 }

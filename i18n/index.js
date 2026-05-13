@@ -1,6 +1,6 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import * as RNLocalize from 'react-native-localize';
+import * as RNLocalize from 'expo-localization';
 
 import fr from './fr.json';
 import en from './en.json';
@@ -9,7 +9,7 @@ const deviceLanguage = RNLocalize.getLocales()[0].languageCode;
 
 i18n.use(initReactI18next)
     .init({
-        compatibilityJSON: 'v4',
+        compatibilityJSON: 'v3',
         lng: deviceLanguage,
         fallbackLng: 'en',
         resources: {
@@ -21,8 +21,8 @@ i18n.use(initReactI18next)
         }
     });
 
-export const setAppLanguage = (lang: 'fr' | 'en' | 'auto') => {
-    if(lang = 'auto'){
+export const setAppLanguage = (lang) => {
+    if(lang === 'auto'){
         const autoLang = RNLocalize.getLocales()[0].languageCode;
         i18n.changeLanguage(autoLang);
     } else {

@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import { View, Text, Pressable, StyleSheet, FlatList, Image } from 'react-native-web';
+import { View, Text, Pressable, StyleSheet, FlatList, Image } from 'react-native';
 import MapView, {Marker, Circle, Polyline, useWindowDimensions} from 'react-native-maps';
 import entrepots from '../../../../data/entrepots.json';
 import routeMaison from '../../../../data/routeMaison.json';

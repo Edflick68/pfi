@@ -1,7 +1,7 @@
 import { View, FlatList, Text, Pressable, StyleSheet } from "react-native";
 import { useSQLiteContext, SQLiteProvider } from "expo-sqlite";
 import { useEffect, useState} from "react";
-import { useTranslation } from "react-i18next";
+import i18n from "../../../i18n";
 import { formatPrice } from "../../../utils/formatPrice";
 import { useRouter } from "expo-router";
 
@@ -12,7 +12,6 @@ export default function ListeProduit(){
 }
 function Content() {
   const db = useSQLiteContext(); 
-  const {t} = useTranslation();
   const [items, setItems] = useState([]);
   const router = useRouter();
   
@@ -32,10 +31,10 @@ function Content() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.titre}>{t('admin_products')}</Text>
+      <Text style={styles.titre}>{i18n('admin_products')}</Text>
       <Pressable style={styles.btnToAdd}
       onPress={() => router.push('/pagesAdmin/ajouter.js')}>
-        <Text style={styles.txtToAdd}>{t('add_product')}</Text>
+        <Text style={styles.txtToAdd}>{i18n('add_product')}</Text>
       </Pressable>
       <FlatList
         data={produit}
@@ -52,7 +51,7 @@ function Content() {
             <Pressable
             style={styles.btnSupprimer}
             onPress={() => supprimerItem(item.id)}>
-              <Text style={styles.txtSupprimer}>{t('delete')}</Text>
+              <Text style={styles.txtSupprimer}>{i18n('delete')}</Text>
             </Pressable>
            </View>
         )}

@@ -73,7 +73,7 @@ export default function LoginScreen() {
         <Button title="Se connecter" onPress={handleLogin} />
       </View>
 
-      <Text style={styles.footer}>Développé par: [Ton Nom Ici]</Text>
+      <Text style={styles.footer}>Développé par: Edouard St-Martin et Sean EdwardDubois</Text>
     </View>
   );
 }

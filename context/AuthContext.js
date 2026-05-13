@@ -1,14 +1,11 @@
 import { createContext, useContext, useState } from "react";
 import { useSQLiteContext } from "expo-sqlite";
-import { useTranslation } from "react-i18next";
 
 const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const db = useSQLiteContext();
-
-  const { i18n } = useTranslation();
 
   const login = async (nom, mdp) => {
     try {
