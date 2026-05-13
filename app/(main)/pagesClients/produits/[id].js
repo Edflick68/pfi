@@ -11,6 +11,7 @@ import { useLocalSearchParams } from "expo-router";
 import { useSQLiteContext } from "expo-sqlite";
 import { useEffect, useState } from "react";
 import { useCart } from "../../../../context/CartContext";
+import i18n from "../../../../i18n";
 
 // The exact map matching your DB strings to the local files (4 levels up)
 const imageMap = {
@@ -76,7 +77,7 @@ export default function ProductDetails() {
 
         <View style={styles.btnWrapper}>
           <Button
-            title="Ajouter au Panier"
+            title= {i18n.t("addToCart")}
             color="#e91e63"
             onPress={handleAddToCart}
           />

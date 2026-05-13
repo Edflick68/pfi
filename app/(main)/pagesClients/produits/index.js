@@ -1,15 +1,12 @@
 import { View, FlatList, Text, Pressable, StyleSheet } from "react-native";
 import { useSQLiteContext, SQLiteProvider } from "expo-sqlite";
 import { formatPrice } from "../../../../utils/formatPrice";
+import i18n from "../../../../i18n";
 
 export default function ListeProduit() {
-  <SQLiteProvider
-    databaseName="produit.db"
-    onInit={initDB}
-    options={{ useNewConnection: false }}
-  >
-    <Content />
-  </SQLiteProvider>;
+  return(
+    <Content/>
+  )
 }
 
 function Content() {
@@ -29,7 +26,7 @@ function Content() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.titre}>Le pit stop</Text>
+      <Text style={styles.titre}>{i18n('appName')}</Text>
       {afficherFormulaire && (
         <Formulaire note={note} setNote={setNote} ajouterNote={ajouterNote} />
       )}

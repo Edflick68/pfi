@@ -5,9 +5,9 @@ import { useRouter } from 'expo-router';
 import { useSQLiteContext, SQLiteProvider } from "expo-sqlite";
 
 export default function AjouterProduit() {
-    <SQLiteProvider databaseName="produit.db" onInit={initDB} options={{useNewConnection: false}}>
+    return(
     <Add/>
-    </SQLiteProvider>
+)
 }
 
 function Add() {

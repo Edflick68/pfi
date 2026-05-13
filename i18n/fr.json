@@ -2,6 +2,7 @@
     "appName" : "Le Pit Stop",
     "login" : "Connexion",
     "products" : "Nos items",
+    "addToCart": "Ajouter au panier",
     "cart" : "Votre panier",
     "account" : "Compte",
     "buy" : "Acheter",

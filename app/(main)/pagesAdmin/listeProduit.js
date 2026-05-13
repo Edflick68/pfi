@@ -1,4 +1,4 @@
-import { View, FlatList, Text, Pressable, StyleSheet } from "react-native";
+import { View, FlatList, Text, Pressable, StyleSheet,Image } from "react-native";
 import { useSQLiteContext, SQLiteProvider } from "expo-sqlite";
 import { useEffect, useState} from "react";
 import i18n from "../../../i18n";
@@ -6,9 +6,9 @@ import { formatPrice } from "../../../utils/formatPrice";
 import { useRouter } from "expo-router";
 
 export default function ListeProduit(){
-     <SQLiteProvider databaseName="produit.db" onInit={initDB} options={{useNewConnection: false}}>
-     <Content/>
-     </SQLiteProvider>
+     return(
+      <Content/>
+     )
 }
 function Content() {
   const db = useSQLiteContext(); 
@@ -16,7 +16,7 @@ function Content() {
   const router = useRouter();
   
   async function chargerItems() {
-    const result = await db.getAllAsync("SELECT * FROM produit ORDER BY num DESC");
+    const result = await db.getAllAsync("SELECT * FROM produit ORDER BY id DESC");
     setItems(result);
   };
 
@@ -31,14 +31,14 @@ function Content() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.titre}>{i18n('admin_products')}</Text>
+      <Text style={styles.titre}>{i18n.t('admin_products')}</Text>
       <Pressable style={styles.btnToAdd}
-      onPress={() => router.push('/pagesAdmin/ajouter.js')}>
-        <Text style={styles.txtToAdd}>{i18n('add_product')}</Text>
+      onPress={() => router.push('pagesAdmin/ajouter.js')}>
+        <Text style={styles.txtToAdd}>{i18n.t('add_product')}</Text>
       </Pressable>
       <FlatList
-        data={produit}
-        keyExtractor={(item) => item.num.toString()}
+        data={items}
+        keyExtractor={(item) => item.id.toString()}
         renderItem={({item}) => (
            <View style={styles.produit}>
             <Image source={{uri: item.image}} style={styles.img}/>
@@ -51,13 +51,13 @@ function Content() {
             <Pressable
             style={styles.btnSupprimer}
             onPress={() => supprimerItem(item.id)}>
-              <Text style={styles.txtSupprimer}>{i18n('delete')}</Text>
+              <Text style={styles.txtSupprimer}>{i18n.t('delete')}</Text>
             </Pressable>
            </View>
         )}
         ListEmptyComponent={
           <Text style={{marginTop: 20, fontSize: 16}}>
-            {t("Aucun item")}
+            {i18n.t("Aucun item")}
           </Text>
         }/>
     </View>

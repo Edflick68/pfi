@@ -7,7 +7,7 @@ export default function AdminLayout(){
     return(
         <Stack>
             <Stack.Screen
-            name = "listeProduits"
+            name = "listeProduit"
             options ={{title: "Liste de Produits et suppression"}}/>
 
             <Stack.Screen

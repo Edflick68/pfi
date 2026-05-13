@@ -28,7 +28,7 @@ async function initDB(db) {
 
 export default function RootLayout() {
   return (
-    <SQLiteProvider databaseName="pfi_db.db" onInit={initDB}>
+    <SQLiteProvider databaseName="pfi_db_v2.db" onInit={initDB}>
       <AuthProvider>
         <CartProvider>
           <Stack screenOptions={{ headerShown: false }}>
