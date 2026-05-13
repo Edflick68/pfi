@@ -1,3 +1,8 @@
+import { Slot } from "expo-router";
+import { SQLiteProvider } from "expo-sqlite";
+import { AuthProvider } from "../context/AuthContext";
+import { CartProvider } from "../context/CartContext";
+
 async function initDB(db) {
   await db.execAsync(`PRAGMA journal_mode = WAL;
     CREATE TABLE IF NOT EXISTS produit (id INTEGER PRIMARY KEY AUTOINCREMENT,
