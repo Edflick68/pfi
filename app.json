@@ -51,7 +51,11 @@
             ]
           }
         }
-      ]
+      ],
+      [
+        "expo-localization"
+      ],
+      "expo-maps"
     ]
   }
 }

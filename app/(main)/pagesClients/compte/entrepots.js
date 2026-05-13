@@ -9,7 +9,7 @@ export default function EntrepotsPage(){
     const[selectedId, setSelectedId] = useState(null);
 
     const maison = {
-
+        latitude
     };
 
     const distance = (lat1, lon1, lat2, lon2) => {
