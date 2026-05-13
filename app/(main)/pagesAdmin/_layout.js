@@ -1,7 +1,6 @@
 import {Stack, router} from "expo-router";
 import { useSQLiteContext } from "expo-sqlite";
 import {useEffect, useState} from "react";
-import { time } from "react-i18next/icu.macro";
 
 export default function AdminLayout(){
     const db = useSQLiteContext();
