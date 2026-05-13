@@ -17,7 +17,7 @@ async function initDB(db) {
     INSERT INTO produit(nom, description, prix, image) values('Éclair', 'Rapetissez et ralentissez tous les autres conducteurs!', 35, 'assets/images-produits/Lightning.jpg');
     INSERT INTO produit(nom, description, prix, image) values('Champignon doré', 'Vous donne autant de boosts que vous désirez pendant un certain temps!', 70, 'assets/images-produits/Mushroom_gold.jpg');
     INSERT INTO produit(nom, description, prix, image) values('Carapace verte', 'Visez votre adversaire avec cet objet!', 12, 'assets/images-produits/Shell_green.jpg');
-    INSERT INTO produit(nom, description, prix, image) values('Carapace rouge', 'Attaquez l\\'adversaire le plus proche avec ceci!', 15, 'assets/images-produits/Shell_red.jpg');
+    INSERT INTO produit(nom, description, prix, image) values('Carapace rouge', 'Attaquez l''adversaire le plus proche avec ceci!', 15, 'assets/images-produits/Shell_red.jpg');
     INSERT INTO produit(nom, description, prix, image) values('Carapace épineuse', 'Attaquez le conducteur en 1ère place avec ce fameux objet de destruction!', 60, 'assets/images-produits/Shell_blue.jpg');
     INSERT INTO produit(nom, description, prix, image) values('Bombe', 'Faites exploser tout sur la route avec ce redoutable objet!', 55, 'assets/images-produits/Bomb.jpg');
     CREATE TABLE IF NOT EXISTS client (nom TEXT NOT NULL, mdp TEXT, admin BOOL, adresse TEXT, langue TEXT);
