@@ -1,10 +1,11 @@
 import {useState, useEffect} from 'react';
 import { View, Text, Pressable, StyleSheet, FlatList, Image } from 'react-native-web';
-import MapView, {Marker, Circle, Polyline} from 'react-native-maps';
+import MapView, {Marker, Circle, Polyline, useWindowDimensions} from 'react-native-maps';
 import entrepots from '../../../../data/entrepots.json';
 import routeMaison from '../../../../data/routeMaison.json';
 
 export default function EntrepotsPage(){
+    //const {height, width} = useWindowDimensions();
     const[selectedId, setSelectedId] = useState(null);
 
     const maison = {
