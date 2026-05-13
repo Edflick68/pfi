@@ -1,4 +1,4 @@
-import { Slot } from "expo-router";
+import { Stack } from "expo-router";
 import { SQLiteProvider } from "expo-sqlite";
 import { AuthProvider } from "../context/AuthContext";
 import { CartProvider } from "../context/CartContext";
