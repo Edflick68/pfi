@@ -1,12 +1,11 @@
 import { View, FlatList, Text, Pressable, StyleSheet } from "react-native";
+import { useEffect, useState } from "react";
 import { useSQLiteContext, SQLiteProvider } from "expo-sqlite";
 import { formatPrice } from "../../../../utils/formatPrice";
 import i18n from "../../../../i18n";
 
 export default function ListeProduit() {
-  return(
-    <Content/>
-  )
+  return <Content />;
 }
 
 function Content() {
@@ -26,7 +25,7 @@ function Content() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.titre}>{i18n('appName')}</Text>
+      <Text style={styles.titre}>{i18n("appName")}</Text>
       {afficherFormulaire && (
         <Formulaire note={note} setNote={setNote} ajouterNote={ajouterNote} />
       )}
