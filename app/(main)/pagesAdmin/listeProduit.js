@@ -49,7 +49,7 @@ function Content() {
         keyExtractor={(item) => item.id.toString()}
         renderItem={({item}) => (
            <View style={styles.produit}>
-            <Image source={getImageSource(item.img)} style={styles.img}/>
+            <Image source={getImageSource(item.image)} style={styles.img}/>
 
             <View style={{flex: 1}}>
               <Text style={styles.nom}>{item.nom}</Text>
