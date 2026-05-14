@@ -2,7 +2,7 @@ import {useState} from 'react';
 import { View, Text, TextInput, StyleSheet, Pressable, Alert } from 'react-native';
 import i18n from '../../../i18n';
 import { useRouter } from 'expo-router';
-import { useSQLiteContext, SQLiteProvider } from "expo-sqlite";
+import { useSQLiteContext} from "expo-sqlite";
 
 export default function AjouterProduit() {
     return(
@@ -12,6 +12,7 @@ export default function AjouterProduit() {
 
 function Add() {
     const router = useRouter();
+    const db = useSQLiteContext();
 
     const [nom, setNom] = useState("");
     const [description, setDescription] = useState("");
