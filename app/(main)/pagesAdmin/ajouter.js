@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import { View, Text, TextInput, StyleSheet, Pressable } from 'react-native';
+import { View, Text, TextInput, StyleSheet, Pressable, Alert } from 'react-native';
 import i18n from '../../../i18n';
 import { useRouter } from 'expo-router';
 import { useSQLiteContext, SQLiteProvider } from "expo-sqlite";
@@ -19,6 +19,10 @@ function Add() {
     const [img, setImg] = useState("");
 
     const ajouter = async () => {
+        if(!nom || !description || !prix || !img){
+            Alert.alert("Erreur!", "Veuillez remplir le formulaire.")
+        }
+
         await db.runAsync(
             "INSERT INTO produit (nom, description, prix, image) VALUES (?, ?, ?, ?)",
             [nom, description, parseFloat(prix), img]
@@ -29,35 +33,33 @@ function Add() {
 
     return(
         <View style={styles.container}>
-            <Text style={styles.title}>{i18n("add_product")}</Text>
-
             <TextInput
-            placeholder={i18n("name")}
+            placeholder={i18n.t("name")}
             style={styles.input}
             value={nom}
             onChangeText={setNom}/>
 
             <TextInput
-            placeholder={i18n("description")}
+            placeholder={i18n.t("description")}
             style={styles.input}
             value={description}
             onChangeText={setDescription}/>
 
             <TextInput
-            placeholder={i18n("price")}
+            placeholder={i18n.t("price")}
             style={styles.input}
             keyboardType = "numeric"
             value={prix}
             onChangeText={setPrix}/>
 
             <TextInput
-            placeholder={i18n("image_url")}
+            placeholder={i18n.t("image_url")}
             style={styles.input}
             value={img}
             onChangeText={setImg}/>
 
             <Pressable style={styles.btn} onPress={ajouter}>
-                <Text style={styles.btnText}>{i18n("save")}</Text>
+                <Text style={styles.btnText}>{i18n.t("save")}</Text>
             </Pressable>
         </View>
     );

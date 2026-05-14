@@ -10,7 +10,7 @@ import {
 import { useState } from "react";
 import { useRouter } from "expo-router";
 import { useSQLiteContext } from "expo-sqlite";
-import { useAuth } from "./context/AuthContext";
+import { useAuth } from "../../context/AuthContext";
 
 export default function LoginScreen() {
   const router = useRouter();
@@ -51,7 +51,7 @@ export default function LoginScreen() {
       <View style={styles.content}>
         <Text style={styles.title}>Boutique Mario Kart</Text>
         <Image
-          source={require("../assets/Tire.png")}
+          source={require("../../assets/Tire.png")}
           style={styles.logo}
           resizeMode="contain"
         />

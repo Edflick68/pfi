@@ -1,5 +1,5 @@
 import { View, FlatList, Text, Pressable, StyleSheet,Image } from "react-native";
-import { useSQLiteContext, SQLiteProvider } from "expo-sqlite";
+import { useSQLiteContext} from "expo-sqlite";
 import { useEffect, useState} from "react";
 import i18n from "../../../i18n";
 import { formatPrice } from "../../../utils/formatPrice";
@@ -31,9 +31,8 @@ function Content() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.titre}>{i18n.t('admin_products')}</Text>
       <Pressable style={styles.btnToAdd}
-      onPress={() => router.push('pagesAdmin/ajouter.js')}>
+      onPress={() => router.push('pagesAdmin/ajouter')}>
         <Text style={styles.txtToAdd}>{i18n.t('add_product')}</Text>
       </Pressable>
       <FlatList

@@ -15,7 +15,7 @@ function Content() {
 
   async function chargerProduit() {
     const result = await db.getAllAsync(
-      "SELECT * FROM produit ORDER BY num DESC",
+      "SELECT * FROM produit ORDER BY id DESC",
     );
     setProduits(result);
   }
