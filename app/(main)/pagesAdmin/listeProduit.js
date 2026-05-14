@@ -5,7 +5,6 @@ import { useTranslation } from "react-i18next";
 import { formatPrice } from "../../../utils/formatPrice";
 import { useRouter } from "expo-router";
 import { productImages } from "../../../utils/productsImages";
-import { Header } from "../../Composants/header";
 
 export default function ListeProduit(){
      return(
@@ -42,7 +41,6 @@ function Content() {
 
   return (
     <View style={styles.container}>
-      <Header/>
       <Pressable style={styles.btnToAdd}
       onPress={() => router.push('pagesAdmin/ajouter')}>
         <Text style={styles.txtToAdd}>{t("add_product")}</Text>

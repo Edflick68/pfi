@@ -9,7 +9,6 @@ import {
 } from "react-native";
 import { useCart } from "../../../context/CartContext";
 import { useTranslation } from "react-i18next";
-import {Header} from "../../Composants/header"
 
 const imageMap = {
   "assets/images-produits/Banana.jpg": require("../../../assets/images-produits/Banana.jpg"),

@@ -3,7 +3,6 @@ import { View, Text, TextInput, StyleSheet, Pressable, Alert } from 'react-nativ
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'expo-router';
 import { useSQLiteContext} from "expo-sqlite";
-import { Header } from "../../Composants/header";
 
 export default function AjouterProduit() {
     return(
@@ -41,7 +40,6 @@ function Add() {
 
     return(
         <View style={styles.container}>
-            <Header/>
             <TextInput
             placeholder={t("name")}
             style={styles.input}

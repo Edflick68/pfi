@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useSQLiteContext, SQLiteProvider } from "expo-sqlite";
 import { formatPrice } from "../../../../utils/formatPrice";
 import { useTranslation } from "react-i18next";
-import { Header} from "../../../Composants/header";
 
 export default function ListeProduit() {
   return <Content />;
