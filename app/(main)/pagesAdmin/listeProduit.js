@@ -4,6 +4,7 @@ import { useEffect, useState} from "react";
 import i18n from "../../../i18n";
 import { formatPrice } from "../../../utils/formatPrice";
 import { useRouter } from "expo-router";
+import { productImages } from "../../../utils/productsImages";
 
 export default function ListeProduit(){
      return(
@@ -25,6 +26,14 @@ function Content() {
     chargerItems();
   }
 
+  function getImageSource(imageSource){
+    if(productImages[imageSource]){
+      return productImages[imageSource]
+    }else{
+      return{uri: imageSource}
+    }
+  }
+
   useEffect(() => {
     chargerItems();
   }, []);
@@ -40,7 +49,7 @@ function Content() {
         keyExtractor={(item) => item.id.toString()}
         renderItem={({item}) => (
            <View style={styles.produit}>
-            <Image source={{uri: item.image}} style={styles.img}/>
+            <Image source={getImageSource(item.img)} style={styles.img}/>
 
             <View style={{flex: 1}}>
               <Text style={styles.nom}>{item.nom}</Text>
