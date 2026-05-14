@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import { useSQLiteContext } from "expo-sqlite";
-import i18n from "../i18n";
+import { setAppLanguage } from "../i18n";
 
 const AuthContext = createContext();
 
@@ -19,7 +19,7 @@ export function AuthProvider({ children }) {
         setUser(result);
 
         if (result.langue) {
-          i18n.changeLanguage(result.langue);
+          setAppLanguage(result.langue);
         }
 
         return true;
