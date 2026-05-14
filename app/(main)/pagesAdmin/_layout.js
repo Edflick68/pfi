@@ -1,6 +1,7 @@
 import {Stack, router} from "expo-router";
 import { useSQLiteContext } from "expo-sqlite";
 import {useEffect, useState} from "react";
+import i18n from "../../../i18n";
 
 export default function AdminLayout(){
     const db = useSQLiteContext();
@@ -8,11 +9,11 @@ export default function AdminLayout(){
         <Stack>
             <Stack.Screen
             name = "listeProduit"
-            options ={{title: "Liste de Produits et suppression"}}/>
+            options ={{title: i18n.t("admin_products")}}/>
 
             <Stack.Screen
             name = "ajouter"
-            options = {{title: "Ajouter un produit"}}/>
+            options = {{title: i18n.t("add_product")}}/>
         </Stack>
     );
 }
