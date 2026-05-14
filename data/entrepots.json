@@ -2,35 +2,30 @@
     {
        "id" : 1,
        "nom":"MaryLand",
-       "image":"https://lh3.googleusercontent.com/gps-cs-s/APNQkAFP3j1kfWOhM92869AKRb3t2VihTIrC58TLSAJUIF7fjYLSKW_YaGwFsGGXHJsj-ZxqNWfu9GNF7TOt90-B8G3p-78ulduNhYpXEHk47GnQaQWowSYkZulzkx_4ykKpnlVDxb6KSA=w408-h272-k-no",
        "longitude":45.56770009918571, 
        "latitude":-73.77010482326918
     },
     {
        "id" : 2,
        "nom":"Dry Dry Items",
-       "image":"https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=AQqibnxdzUzlo1dgETmQKw&cb_client=search.gws-prod.gps&w=408&h=240&yaw=359.16827&pitch=0&thumbfov=100",
        "longitude":46.07399788599158, 
        "latitude":-73.5026360018021
     },
     {
        "id" : 3,
        "nom":"Sherbet Palace",
-       "image":"https://lh3.googleusercontent.com/gps-cs-s/APNQkAG2H5j15fTp4WJmYOhw5xoSukEckZ6WfTMhEKes8BhNJbWJ8khAambY0QhRytU9ihkWWAkPbefmnod9Qq6DDmH4vLzbaG8QziiM5wyYab6kWcjdxcwpd-CN2v0NRRsERr-C5Z8=w408-h270-k-no",
         "longitude":45.577950623569826, 
         "latitude":-73.70120093066656
     },
     {
        "id" : 4,
        "nom":"Super Stadium",
-       "image":"https://lh3.googleusercontent.com/gps-cs-s/APNQkAE6hF46vls2vTOoouVHcvPbq2BQYzQp3BMnqJ3XfJ3auUcdBqW6VwiASxXMtf5470gtxc11QD4GpqqW6UgZU4JKOwSXh8IUXCKtLmBanB0AUTI1HWUrpO-Q-1554qvp7W7-stz7=w408-h240-k-no-pi-10-ya52.839962-ro-0-fo100",
         "longitude":45.374821226315, 
         "latitude":-73.52619438133407
     },
     {
        "id" : 5,
        "nom":"Daisy Cozy",
-       "image":"https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=ycoiHkYOoflEKECzQlVvYw&cb_client=search.gws-prod.gps&w=408&h=240&yaw=37.6211&pitch=0&thumbfov=100",
         "longitude":45.67128657459362, 
         "latitude":-73.90218539641127
     }

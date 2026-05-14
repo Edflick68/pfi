@@ -25,6 +25,14 @@ export default function EntrepotsPage() {
     longitude: -73.8437478,
   };
 
+  const icons = {
+    1:require("../../../../assets/sites/site.jpg"),
+    2:require("../../../../assets/sites/site2.jpg"),
+    3:require("../../../../assets/sites/site3.jpg"),
+    4:require("../../../../assets/sites/site4.jpg"),
+    5:require("../../../../assets/sites/site5.jpg")
+  }
+
   const distance = (lat1, lon1, lat2, lon2) => {
     const R = 6371;
     const dLat = ((lat2 - lat1) * Math.PI) / 180;
@@ -86,7 +94,7 @@ export default function EntrepotsPage() {
             coordinate={{ latitude: e.latitude, longitude: e.longitude }}
             title={e.nom}
             onPress={() => setSelectedId(e.id)}
-            image={e.image}
+            image={icons[e.id]}
           />
         ))}
         {entrepots.map((e) => (
