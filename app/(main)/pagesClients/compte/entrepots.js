@@ -94,7 +94,7 @@ export default function EntrepotsPage() {
             coordinate={{ latitude: e.latitude, longitude: e.longitude }}
             title={e.nom}
             onPress={() => setSelectedId(e.id)}
-            image={icons[e.id]}
+            icon={icons[e.id]}
           />
         ))}
         {entrepots.map((e) => (
