@@ -22,12 +22,12 @@ export function AuthProvider({ children }) {
           setAppLanguage(result.langue);
         }
 
-        return true;
+        return result;
       }
-      return false;
+      return null;
     } catch (error) {
       console.error("Erreur de connexion:", error);
-      return false;
+      return null;
     }
   };
 

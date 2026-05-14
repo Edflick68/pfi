@@ -9,12 +9,12 @@ import {
 } from "react-native";
 import { useState } from "react";
 import { useRouter } from "expo-router";
-import { useSQLiteContext } from "expo-sqlite";
 import { useAuth } from "../../context/AuthContext";
 
 export default function LoginScreen() {
   const router = useRouter();
-  const db = useSQLiteContext();
+
+  const { login } = useAuth();
 
   const [nom, setNom] = useState("");
   const [mdp, setMdp] = useState("");
@@ -26,13 +26,10 @@ export default function LoginScreen() {
     }
 
     try {
-      const user = await db.getFirstAsync(
-        "SELECT * FROM client WHERE nom = ? AND mdp = ?",
-        [nom, mdp],
-      );
+      const loggedInUser = await login(nom, mdp);
 
-      if (user) {
-        if (user.admin === 1 || user.admin === true) {
+      if (loggedInUser) {
+        if (loggedInUser.admin === 1 || loggedInUser.admin === true) {
           router.replace("/(main)/pagesAdmin/listeProduit");
         } else {
           router.replace("/(main)/pagesClients/produits");
