@@ -28,20 +28,16 @@ async function initDB(db) {
     await db.execAsync(`CREATE TABLE IF NOT EXISTS client (nom TEXT NOT NULL, mdp TEXT, admin BOOL, adresse TEXT, langue TEXT);
     INSERT INTO client(nom, mdp, admin, adresse, langue) values('Lina', 'password', false, '54 Rue Trollet', 'fr');
     INSERT INTO client(nom, mdp, admin, adresse, langue) values('Edouard', 'password', true, '6 Rue Drollet', 'en');
-    INSERT INTO client(nom, mdp, admin, adresse, langue) values('Sean', 'password', true, '90 Rue Jean-Dallaire', 'en');`);
+    INSERT INTO client(nom, mdp, admin, adresse, langue) values('Sean', 'password', true, '90 Rue Jean-Dallaire', 'fr');`);
 }
 
 export default function RootLayout() {
   return (
     <SQLiteProvider databaseName="pfi_db_v2.db" onInit={initDB}>
-      <AuthProvider>
-        <CartProvider>
           <Stack screenOptions={{ headerShown: false }}>
             <Stack.Screen name="index" />
             <Stack.Screen name="(main)" />
           </Stack>
-        </CartProvider>
-      </AuthProvider>
     </SQLiteProvider>
   );
 }

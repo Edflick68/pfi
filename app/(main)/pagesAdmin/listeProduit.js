@@ -1,10 +1,11 @@
 import { View, FlatList, Text, Pressable, StyleSheet,Image } from "react-native";
 import { useSQLiteContext} from "expo-sqlite";
 import { useEffect, useState} from "react";
-import i18n from "../../../i18n";
+import { useTranslation } from "react-i18next";
 import { formatPrice } from "../../../utils/formatPrice";
 import { useRouter } from "expo-router";
 import { productImages } from "../../../utils/productsImages";
+import { Header } from "../../Composants/header";
 
 export default function ListeProduit(){
      return(
@@ -15,6 +16,7 @@ function Content() {
   const db = useSQLiteContext(); 
   const [items, setItems] = useState([]);
   const router = useRouter();
+  const {t} = useTranslation();
   
   async function chargerItems() {
     const result = await db.getAllAsync("SELECT * FROM produit ORDER BY id DESC");
@@ -40,9 +42,10 @@ function Content() {
 
   return (
     <View style={styles.container}>
+      <Header/>
       <Pressable style={styles.btnToAdd}
       onPress={() => router.push('pagesAdmin/ajouter')}>
-        <Text style={styles.txtToAdd}>{i18n.t('add_product')}</Text>
+        <Text style={styles.txtToAdd}>{t("add_product")}</Text>
       </Pressable>
       <FlatList
         data={items}
@@ -59,13 +62,13 @@ function Content() {
             <Pressable
             style={styles.btnSupprimer}
             onPress={() => supprimerItem(item.id)}>
-              <Text style={styles.txtSupprimer}>{i18n.t('delete')}</Text>
+              <Text style={styles.txtSupprimer}>{t("delete")}</Text>
             </Pressable>
            </View>
         )}
         ListEmptyComponent={
           <Text style={{marginTop: 20, fontSize: 16}}>
-            {i18n.t("Aucun item")}
+            {t("Aucun item")}
           </Text>
         }/>
     </View>

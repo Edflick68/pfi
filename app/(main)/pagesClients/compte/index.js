@@ -12,6 +12,7 @@ import { useAuth } from "../../../../context/AuthContext";
 import { useSQLiteContext } from "expo-sqlite";
 import { useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
+import { Header } from "../../../Composants/header"
 
 const RadioOption = ({ label, value, selectedValue, onSelect }) => (
   <Pressable style={styles.radioContainer} onPress={() => onSelect(value)}>
@@ -49,6 +50,7 @@ export default function CompteScreen() {
       style={styles.container}
       contentContainerStyle={{ paddingBottom: 40 }}
     >
+      <Header/>
       <Text style={styles.headerTitle}>Mon Compte</Text>
 
       <View style={styles.inputGroup}>

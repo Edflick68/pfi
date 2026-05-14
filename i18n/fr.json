@@ -12,5 +12,8 @@
     "delete": "Supprimer",
     "price" : "Prix",
     "image_url": "URL de l'image",
-    "save": "Enregister"
+    "save": "Enregister",
+    "null": "Aucun item",
+    "error": "Erreur!",
+    "e_message": "Remplissez le formulaire"
 }

@@ -12,5 +12,8 @@
     "delete": "Delete",
     "price" : "Price",
     "image_url": " Image URL",
-    "save": "Save"
+    "save": "Save",
+    "null": "No items found",
+    "error": "Error!",
+    "e_message": "Fill the form first"
 }

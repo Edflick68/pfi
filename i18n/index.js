@@ -5,12 +5,11 @@ import * as RNLocalize from 'expo-localization';
 import fr from './fr.json';
 import en from './en.json';
 
-const deviceLanguage = RNLocalize.getLocales()[0].languageCode;
 
 i18n.use(initReactI18next)
     .init({
         compatibilityJSON: 'v3',
-        lng: deviceLanguage,
+        lng: 'fr',
         fallbackLng: 'en',
         resources: {
             fr: {translation: fr},

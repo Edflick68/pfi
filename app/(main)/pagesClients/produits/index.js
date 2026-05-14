@@ -2,7 +2,8 @@ import { View, FlatList, Text, Pressable, StyleSheet } from "react-native";
 import { useEffect, useState } from "react";
 import { useSQLiteContext, SQLiteProvider } from "expo-sqlite";
 import { formatPrice } from "../../../../utils/formatPrice";
-import i18n from "../../../../i18n";
+import { useTranslation } from "react-i18next";
+import { Header} from "../../../Composants/header";
 
 export default function ListeProduit() {
   return <Content />;
@@ -11,6 +12,7 @@ export default function ListeProduit() {
 function Content() {
   const db = useSQLiteContext();
   const [produits, setProduits] = useState([]);
+  const {t} = useTranslation();
 
   async function chargerProduit() {
     const result = await db.getAllAsync(
@@ -25,7 +27,7 @@ function Content() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.titre}>{i18n("appName")}</Text>
+      <Text style={styles.titre}>{t("appName")}</Text>
       {afficherFormulaire && (
         <Formulaire note={note} setNote={setNote} ajouterNote={ajouterNote} />
       )}
