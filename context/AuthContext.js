@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import { useSQLiteContext } from "expo-sqlite";
+import i18n from "../i18n";
 
 const AuthContext = createContext();
 
