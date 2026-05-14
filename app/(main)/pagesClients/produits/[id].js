@@ -13,7 +13,6 @@ import { useEffect, useState } from "react";
 import { useCart } from "../../../../context/CartContext";
 import i18n from "../../../../i18n";
 
-// The exact map matching your DB strings to the local files (4 levels up)
 const imageMap = {
   "assets/images-produits/Banana.jpg": require("../../../../assets/images-produits/Banana.jpg"),
   "assets/images-produits/Bomb.jpg": require("../../../../assets/images-produits/Bomb.jpg"),
@@ -77,7 +76,7 @@ export default function ProductDetails() {
 
         <View style={styles.btnWrapper}>
           <Button
-            title= {i18n.t("addToCart")}
+            title={i18n.t("addToCart")}
             color="#e91e63"
             onPress={handleAddToCart}
           />
