@@ -7,10 +7,10 @@ async function initDB(db) {
   await db.execAsync(`PRAGMA journal_mode = WAL;
     CREATE TABLE IF NOT EXISTS produit (id INTEGER PRIMARY KEY AUTOINCREMENT,
     nom TEXT, description TEXT, prix MONEY, image TEXT);`);
-    const count = await db.getFirstAsync("SELECT COUNT(*) AS total FROM produit");
+  const count = await db.getFirstAsync("SELECT COUNT(*) AS total FROM produit");
 
-    if(count.total === 0){
-        await db.execAsync(`INSERT INTO produit(nom, description, prix, image) values('Champignon', 'Donne un boost temporaire!', 8, 'mushroom_red');
+  if (count.total === 0) {
+    await db.execAsync(`INSERT INTO produit(nom, description, prix, image) values('Champignon', 'Donne un boost temporaire!', 8, 'mushroom_red');
     INSERT INTO produit(nom, description, prix, image) values('Étoile', 'Vous rend invincible pendant un certain temps!', 100, 'star');
     INSERT INTO produit(nom, description, prix, image) values('Haut-Parleur', 'Fait joueur votre klaxon au maximum pour attaquer vos adversaires!', 30, 'horn');
     INSERT INTO produit(nom, description, prix, image) values('Fusée', 'Vous rend invincible et vous propulse à une énorme vitesse!', 150, 'bulletbill');
@@ -23,12 +23,27 @@ async function initDB(db) {
     INSERT INTO produit(nom, description, prix, image) values('Carapace rouge', 'Attaquez l''adversaire le plus proche avec ceci!', 15, 'shell_red');
     INSERT INTO produit(nom, description, prix, image) values('Carapace épineuse', 'Attaquez le conducteur en 1ère place avec ce fameux objet de destruction!', 60, 'shell_blue');
     INSERT INTO produit(nom, description, prix, image) values('Bombe', 'Faites exploser tout sur la route avec ce redoutable objet!', 55, 'bomb');`);
-    }
+  }
 
-    await db.execAsync(`CREATE TABLE IF NOT EXISTS client (nom TEXT NOT NULL, mdp TEXT, admin BOOL, adresse TEXT, langue TEXT);
+  await db.execAsync(`CREATE TABLE IF NOT EXISTS client (nom TEXT NOT NULL, mdp TEXT, admin BOOL, adresse TEXT, langue TEXT);
     INSERT INTO client(nom, mdp, admin, adresse, langue) values('Lina', 'password', false, '54 Rue Trollet', 'fr');
     INSERT INTO client(nom, mdp, admin, adresse, langue) values('Edouard', 'password', true, '6 Rue Drollet', 'en');
     INSERT INTO client(nom, mdp, admin, adresse, langue) values('Sean', 'password', true, '90 Rue Jean-Dallaire', 'fr');`);
+}
+
+function RootLayoutNav() {
+  const { user } = useAuth();
+
+  if (!user) {
+    return <Redirect href="/" />;
+  }
+
+  return (
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="index" options={{ headerShown: false }} />
+      <Stack.Screen name="(main)" options={{ headerShown: false }} />
+    </Stack>
+  );
 }
 
 export default function RootLayout() {
@@ -36,10 +51,7 @@ export default function RootLayout() {
     <SQLiteProvider databaseName="pfi_db_v2.db" onInit={initDB}>
       <AuthProvider>
         <CartProvider>
-          <Stack screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="index" />
-            <Stack.Screen name="(main)" />
-          </Stack>
+          <RootLayoutNav />
         </CartProvider>
       </AuthProvider>
     </SQLiteProvider>

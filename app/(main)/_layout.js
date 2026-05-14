@@ -3,8 +3,11 @@ import { View, Text, Button } from "react-native";
 import { useAuth } from "../../context/AuthContext";
 
 export default function MainLayout() {
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
 
+  if (!user) {
+    return <Redirect href="/" />;
+  }
   return (
     <View style={{ flex: 1 }}>
       <View

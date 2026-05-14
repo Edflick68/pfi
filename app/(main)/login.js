@@ -9,11 +9,10 @@ import {
 } from "react-native";
 import { useState } from "react";
 import { useRouter } from "expo-router";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../context/AuthContext";
 
 export default function LoginScreen() {
   const router = useRouter();
-
   const { login } = useAuth();
 
   const [nom, setNom] = useState("");
@@ -25,21 +24,16 @@ export default function LoginScreen() {
       return;
     }
 
-    try {
-      const loggedInUser = await login(nom, mdp);
+    const user = await login(nom, mdp);
 
-      if (loggedInUser) {
-        if (loggedInUser.admin === 1 || loggedInUser.admin === true) {
-          router.replace("/(main)/pagesAdmin/listeProduit");
-        } else {
-          router.replace("/(main)/pagesClients/produits");
-        }
+    if (user) {
+      if (user.admin === 1 || user.admin === true) {
+        router.replace("/(main)/pagesAdmin/listeProduit");
       } else {
-        Alert.alert("Erreur", "Nom ou mot de passe incorrect.");
+        router.replace("/(main)/pagesClients/produits");
       }
-    } catch (error) {
-      console.error("Login error:", error);
-      Alert.alert("Erreur", "Une erreur est survenue lors de la connexion.");
+    } else {
+      Alert.alert("Erreur", "Nom ou mot de passe incorrect.");
     }
   };
 
